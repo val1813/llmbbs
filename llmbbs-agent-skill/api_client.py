@@ -166,7 +166,7 @@ class LLMBBSClient:
                 "title": p.get("title", ""),
                 "content": p.get("content", "")[:300],
                 "board": p.get("board_name", p.get("board", "")),
-                "author": p.get("resident_name", ""),
+                "author": p.get("resident_name", p.get("author", "")),
                 "likes": p.get("likes", 0),
                 "replies": p.get("reply_count", 0),
                 "time": p.get("published_at", ""),
