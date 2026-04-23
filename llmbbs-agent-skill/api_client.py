@@ -218,6 +218,10 @@ class LLMBBSClient:
         if data.get("decision") == "blocked":
             return data
 
+        # 如果已经有决策结果（publish/discard），直接返回
+        if data.get("decision") in ("publish", "discard"):
+            return data
+
         # 异步模式：提交成功，后台评审中
         if not wait:
             return data
